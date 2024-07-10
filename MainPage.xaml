@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ComportamientoMaui"
+             x:Class="ComportamientoMaui.MainPage">
+
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="NumericValidationStyle" TargetType="Entry">
+                <Setter Property="local:NumericValidationStyleBehavior.AttachBehavior" Value="True"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
+    <ScrollView>
+        <VerticalStackLayout>
+            <Entry Placeholder="Ingrese un número decimal">
+                <Entry.Behaviors>
+                    <local:NumericValidationBehavior/>
+                </Entry.Behaviors>
+            </Entry>
+
+            <Entry Placeholder="Ingrese un número con decimales" Style="{StaticResource NumericValidationStyle}"/>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
